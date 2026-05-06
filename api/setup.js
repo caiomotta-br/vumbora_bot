@@ -1,8 +1,5 @@
-// Endpoint de configuração inicial — chamar UMA vez após o deploy
-// 1. Faz o seed da base de lugares
-// 2. Configura o webhook do Telegram apontando pra este deploy
 import { redis, TG_TOKEN } from '../lib/shared.js';
-import seed from '../data/seed.json' with { type: 'json' };
+import seed from '../data/seed.js';
 
 export default async function handler(req, res) {
   const auth = req.headers.authorization || '';
